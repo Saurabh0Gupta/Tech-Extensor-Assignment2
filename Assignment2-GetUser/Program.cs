@@ -3,6 +3,8 @@ using System;
 using System.IO;
 using OfficeOpenXml;
 
+
+//This is the first approach to solve the given problem. 
 class Program
 {
     static void Main(string[] args)
@@ -26,9 +28,9 @@ class Program
                         {
                             if (backUpdataworksheet.Cells[$"C{i}"].Text != currentdataworksheet.Cells[$"C{j}"].Text)
                             { 
-                                userList.Add(backUpdataworksheet.Cells[$"D{i}"].Text);
+                                userList.Add(backUpdataworksheet.Cells[$"D{i}"].Text +" "+ backUpdataworksheet.Cells[$"E{i}"].Text);
                             }
-                            break;
+                            break;//nonkkff
                         }
                     }
                 }    
@@ -36,7 +38,7 @@ class Program
         int count = 1;
         foreach (var item in userList)
         {
-            Console.WriteLine((count++)+"->"+item);
+            Console.WriteLine((count++)+"-> "+item);
         }
         Console.Read();
     }
